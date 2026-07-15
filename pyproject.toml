@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cortex-inspect"
+version = "0.1.0"
+description = "Snowflake Cortex Agents model provider for inspect-ai"
+requires-python = ">=3.10"
+dependencies = [
+    "inspect-ai",
+    "aiohttp>=3.9",
+]
+
+[project.entry-points.inspect_ai]
+cortex_inspect = "cortex_inspect._registry"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cortex_inspect*"]
